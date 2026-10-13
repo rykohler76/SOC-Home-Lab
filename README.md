@@ -39,14 +39,14 @@ I also learned how to use Splunk to filter large amounts of event data and narro
 ## Investigation Screenshots
 
 ### PowerShell System Discovery
-- [Detection Query](screenshots/01-powershell-detection-query.png)
-- [Detection Event](screenshots/02-powershell-detection-event.png)
+- [Detection Query](screeenshots/01-powershell-detection-query.png)
+- [Detection Event](screeenshots/02-powershell-detection-event.png)
 
 ### Encoded PowerShell
-- [Detection Query](screenshots/03-encoded-powershell-query.png)
-- [Detection Event](screenshots/04-encoded-powershell-event.png)
+- [Detection Query](screeenshots/03-encoded-powershell-query.png)
+- [Detection Event](screeenshots/04-encoded-powershell-event.png)
 
 ### PowerShell Network Investigation
-- [Event Timeline](screenshots/05-powershell-network-timeline.png)
-- [Network Connection Evidence](screenshots/06-powershell-network-event.png)
+- [Event Timeline](screeenshots/05-powershell-network-timeline.png)
+- [Network Connection Evidence](screeenshots/06-powershell-network-event.png)
 
