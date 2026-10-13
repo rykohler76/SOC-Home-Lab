@@ -1,0 +1,19 @@
+PowerShell System Discovery Detection
+
+SPL Query:
+index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1
+Image="*\\powershell.exe"
+CommandLine="*-NoProfile*"
+(CommandLine="*whoami*" OR CommandLine="*Get-ComputerInfo*")
+
+Purpose:
+Identify PowerShell process creation using -NoProfile combined with basic user or system discovery commands.
+
+Data Source:
+Sysmon Event ID 1 - Process Creation
+
+Validation:
+Tested in a Windows 11 home lab using Sysmon and Splunk Enterprise.
+
+Limitations:
+This activity is not inherently malicious. Legitimate administrators and scripts may produce similar command lines, so additional context is required before escalation.

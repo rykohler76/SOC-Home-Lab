@@ -1,0 +1,28 @@
+Encoded PowerShell Command Detection
+
+SPL Query:
+index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1
+Image="*\\powershell.exe"
+(CommandLine="*-EncodedCommand*" OR CommandLine="*-enc *")
+
+Purpose:
+Identify PowerShell process creation where the command line uses the
+-EncodedCommand parameter or its shortened -enc form.
+
+Data Source:
+Sysmon Event ID 1 - Process Creation
+
+Validation:
+Tested in a Windows 11 home lab using Sysmon and Splunk Enterprise.
+A harmless Base64-encoded PowerShell command was executed to generate
+the test telemetry, and the detection successfully returned the event.
+
+Analysis:
+The detected process was powershell.exe using -NoProfile and
+-EncodedCommand. The encoded content used during testing only executed
+a harmless Write-Output command.
+
+Limitations:
+Encoded PowerShell is not inherently malicious. Administrators and
+legitimate scripts may use encoded commands, so a match should be
+investigated in context rather than automatically classified as malicious.
